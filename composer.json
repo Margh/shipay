@@ -1,0 +1,25 @@
+{
+    "name"          : "margh/shipay",
+    "description"   : "Wrapper php para comunicação com a api shipay",
+    "type"          : "library",
+    "license"       : "MIT",
+    "authors": [{
+        "name"  : "Margh Consultoria de Desenvolvimento de Software",
+        "email" : "desenvolvimento@margh.com.br"
+    }],
+    
+    "require": {
+        "php-curl-class/php-curl-class" : "^7.1"
+    },
+    
+    "autoload": {
+        
+        "psr-4": {
+            "Shipay\\": "src/Shipay"
+        },
+
+        "classmap" : [
+            "src/Shipay"
+        ]
+    }
+}
