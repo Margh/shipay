@@ -28,20 +28,19 @@ abstract class Endpoint {
     }
 
     /**
-     * Apaga um registro no endpoint
+     * cria um registro
      * 
-     * @param array $data = null Parâmetros da requisição
+     * @param string $id = null Parâmetros da requisição
+     * @param array  $data = null Parâmetros da requisição
      * @return object Resposta do serviço
     */
-    public function delete($id = null){
+    public function post($data = null){
         
         try{
-            
-            if(empty($id)) throw new \Exception("Id não informado.");
 
-            $this->api->complementUrl($id);
+            $this->api->addHeader('content-type', 'application/json');
 
-            return $this->api->execute('delete', $this->getEndpoint(), null);
+            return $this->api->execute('post', $this->getEndpoint(), $data);
         }
         catch(\Exception $e){
             
@@ -50,18 +49,16 @@ abstract class Endpoint {
     }
 
     /**
-     * Busca pelo id
+     * Busca pelo por um ou mais registros
      * 
      * @param array $id = null Parâmetros da requisição
      * @return object Resposta do serviço
     */
-    public function searchById($id = null){
+    public function get($id = null){
         
         try{
-            
-            if(empty($id)) throw new \Exception("Id não informado.");
 
-            $this->api->complementUrl($id);
+            if($id) $this->api->complementUrl($id);
 
             return $this->api->execute('get', $this->getEndpoint(), null);
         }
@@ -72,30 +69,12 @@ abstract class Endpoint {
     }
 
     /**
-     * Busca todos os registro do endpoint
+     * Edita um registro
      * 
      * @param array $data = null Parâmetros da requisição
      * @return object Resposta do serviço
     */
-    public function searchAll($data = null){
-
-        try{
-
-            return $this->api->execute('get', $this->getEndpoint(), $data);
-        }
-        catch(\Exception $e){
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Edita um dado no endpoint
-     * 
-     * @param array $data = null Parâmetros da requisição
-     * @return object Resposta do serviço
-    */
-    public function edit($id = null, $data = null){
+    public function put($id = null, $data = null){
         
         try{
             
@@ -114,19 +93,20 @@ abstract class Endpoint {
     }
 
     /**
-     * cria um dado no endpoint
+     * Apaga um registro
      * 
-     * @param string $id = null Parâmetros da requisição
-     * @param array  $data = null Parâmetros da requisição
+     * @param array $data = null Parâmetros da requisição
      * @return object Resposta do serviço
     */
-    public function create($data = null){
+    public function delete($id = null){
         
         try{
+            
+            if(empty($id)) throw new \Exception("Id não informado.");
 
-            $this->api->addHeader('content-type', 'application/json');
+            $this->api->complementUrl($id);
 
-            return $this->api->execute('post', $this->getEndpoint(), $data);
+            return $this->api->execute('delete', $this->getEndpoint(), null);
         }
         catch(\Exception $e){
             
