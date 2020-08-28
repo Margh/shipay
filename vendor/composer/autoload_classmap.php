@@ -6,12 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Zoop\\Api' => $baseDir . '/src/Zoop/Api.php',
-    'Zoop\\Buyers' => $baseDir . '/src/Zoop/Buyers.php',
-    'Zoop\\Endpoint' => $baseDir . '/src/Zoop/Endpoint.php',
-    'Zoop\\Exception' => $baseDir . '/src/Zoop/Exception.php',
-    'Zoop\\Invoices' => $baseDir . '/src/Zoop/Invoices.php',
-    'Zoop\\Plans' => $baseDir . '/src/Zoop/Plans.php',
-    'Zoop\\Sellers' => $baseDir . '/src/Zoop/Sellers.php',
-    'Zoop\\Subscriptions' => $baseDir . '/src/Zoop/Subscriptions.php',
+    'Shipay\\Api' => $baseDir . '/src/Shipay/Api.php',
+    'Shipay\\AuthsPDVs' => $baseDir . '/src/Shipay/AuthsPDVs.php',
+    'Shipay\\AuthsUsers' => $baseDir . '/src/Shipay/AuthsUsers.php',
+    'Shipay\\Endpoint' => $baseDir . '/src/Shipay/Endpoint.php',
+    'Shipay\\Exception' => $baseDir . '/src/Shipay/Exception.php',
+    'Shipay\\Orders' => $baseDir . '/src/Shipay/Orders.php',
+    'Shipay\\RefreshTokens' => $baseDir . '/src/Shipay/RefreshTokens.php',
+    'Shipay\\Wallets' => $baseDir . '/src/Shipay/Wallets.php',
 );

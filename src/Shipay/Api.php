@@ -16,21 +16,10 @@ class Api {
     private $secret_key;
     private $wallet;
     private $client_id;
+    private $token;
     private $timeout;
-    private $headers = array();
-
-    /**
-     * Adiciona um item no Header
-     * 
-     * @param string $key
-     * @param string $value
-    */
-    public function addHeader($key, $value){
-        
-        if(!empty($key) && !empty($value)){
-            $this->headers[$key] = $value;
-        }
-    }
+    private $headers       = array();
+    private $complementUrl = '';
 
     /**
      * Construtor
@@ -40,14 +29,17 @@ class Api {
      * @param string $wallet
      * @param int    $timeout
     */
-    public function __construct($access_key, $secret_key, $wallet, $client_id = null, $timeout = 120){
+    public function __construct($access_key, $secret_key, $wallet, $client_id = null, $token = '',$timeout = 120){
 
         $this->curl       = new \Curl\Curl();
         $this->access_key = $access_key;
         $this->secret_key = $secret_key;
         $this->wallet     = $wallet;
-        $this->client_id = $client_id;
+        $this->client_id  = $client_id;
+        $this->token      = $token;
         $this->timeout    = $timeout;
+
+        if(!empty($token)) $this->setAuthorization($token);
     }
 
     /**
@@ -62,8 +54,6 @@ class Api {
     public function execute($action, $endpoint, $data){
         
         try{
-            
-            //$this->curl->setBasicAuthentication($this->access_key, $this->secret_key);
 
             $this->curl->setOpt(CURLOPT_RETURNTRANSFER , true);
             $this->curl->setOpt(CURLOPT_FOLLOWLOCATION , true);
@@ -77,7 +67,9 @@ class Api {
 
             $this->curl->setConnectTimeout($this->timeout);
 
-            $url = $this->url .'/' .$endpoint. '/' .$this->complementUrl;
+            $url = $this->url .'/' .$endpoint;
+            
+            if(!empty($this->complementUrl)) $url .= '/' .$this->complementUrl;
 
             $this->curl->$action($url, $data);
 
@@ -149,7 +141,32 @@ class Api {
     */
     public function setAuthorization($token){
 
+        $this->removeHeader('Authorization');
+        
         $this->addHeader('Authorization', 'Bearer '. $token);
 
+    }
+
+    /**
+     * Adiciona um item no Header
+     * 
+     * @param string $key
+     * @param string $value
+    */
+    public function addHeader($key, $value){
+        
+        if(!empty($key) && !empty($value)){
+            $this->headers[$key] = $value;
+        }
+    }
+
+    /**
+     * Remove um item no Header
+     * 
+     * @param string $key
+    */
+    public function removeHeader($key){
+        
+        if(!empty($key)) $this->curl->removeHeader($key);
     }
 }

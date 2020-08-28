@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Zoop\\' => array($baseDir . '/src/Zoop'),
+    'Shipay\\' => array($baseDir . '/src/Shipay'),
     'Curl\\' => array($vendorDir . '/php-curl-class/php-curl-class/src/Curl'),
 );

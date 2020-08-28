@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit6104b924d21f3c31c1ab84f22018aed0
 {
     public static $prefixLengthsPsr4 = array (
-        'Z' => 
+        'S' => 
         array (
-            'Zoop\\' => 5,
+            'Shipay\\' => 7,
         ),
         'C' => 
         array (
@@ -18,9 +18,9 @@ class ComposerStaticInit6104b924d21f3c31c1ab84f22018aed0
     );
 
     public static $prefixDirsPsr4 = array (
-        'Zoop\\' => 
+        'Shipay\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Zoop',
+            0 => __DIR__ . '/../..' . '/src/Shipay',
         ),
         'Curl\\' => 
         array (
@@ -29,14 +29,14 @@ class ComposerStaticInit6104b924d21f3c31c1ab84f22018aed0
     );
 
     public static $classMap = array (
-        'Zoop\\Api' => __DIR__ . '/../..' . '/src/Zoop/Api.php',
-        'Zoop\\Buyers' => __DIR__ . '/../..' . '/src/Zoop/Buyers.php',
-        'Zoop\\Endpoint' => __DIR__ . '/../..' . '/src/Zoop/Endpoint.php',
-        'Zoop\\Exception' => __DIR__ . '/../..' . '/src/Zoop/Exception.php',
-        'Zoop\\Invoices' => __DIR__ . '/../..' . '/src/Zoop/Invoices.php',
-        'Zoop\\Plans' => __DIR__ . '/../..' . '/src/Zoop/Plans.php',
-        'Zoop\\Sellers' => __DIR__ . '/../..' . '/src/Zoop/Sellers.php',
-        'Zoop\\Subscriptions' => __DIR__ . '/../..' . '/src/Zoop/Subscriptions.php',
+        'Shipay\\Api' => __DIR__ . '/../..' . '/src/Shipay/Api.php',
+        'Shipay\\AuthsPDVs' => __DIR__ . '/../..' . '/src/Shipay/AuthsPDVs.php',
+        'Shipay\\AuthsUsers' => __DIR__ . '/../..' . '/src/Shipay/AuthsUsers.php',
+        'Shipay\\Endpoint' => __DIR__ . '/../..' . '/src/Shipay/Endpoint.php',
+        'Shipay\\Exception' => __DIR__ . '/../..' . '/src/Shipay/Exception.php',
+        'Shipay\\Orders' => __DIR__ . '/../..' . '/src/Shipay/Orders.php',
+        'Shipay\\RefreshTokens' => __DIR__ . '/../..' . '/src/Shipay/RefreshTokens.php',
+        'Shipay\\Wallets' => __DIR__ . '/../..' . '/src/Shipay/Wallets.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Shipay",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "log": false,
+            "externalConsole": false,
+            "pathMappings": {
+				"/var/www/html/shipay/src/": "/margh/shipay/www/shipay/src/",
+				"/var/www/html/shipay/src" : "/margh/shipay/www/shipay/src/"
+			},
+            "ignore": [
+                "**/vendor/**/*.php"
+            ]
+        }
+    ]
+}
