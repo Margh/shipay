@@ -11,7 +11,7 @@ namespace Shipay;
 class Api {
     
     private $curl;
-    private $url = "https://api-staging.shipay.com.br";
+    private $url = "https://api.shipay.com.br";
     private $access_key;
     private $secret_key;
     private $wallet;
@@ -29,9 +29,12 @@ class Api {
      * @param string $wallet
      * @param int    $timeout
     */
-    public function __construct($access_key, $secret_key, $wallet, $client_id = null, $token = '',$timeout = 120){
+    public function __construct($access_key, $secret_key, $wallet, $client_id = null, $token = '', $environment = 'production', $timeout = 120){
 
-        $this->curl       = new \Curl\Curl();
+        $this->curl = new \Curl\Curl();
+        
+        if($environment == 'approval') $this->url = "https://api-staging.shipay.com.br";
+        
         $this->access_key = $access_key;
         $this->secret_key = $secret_key;
         $this->wallet     = $wallet;

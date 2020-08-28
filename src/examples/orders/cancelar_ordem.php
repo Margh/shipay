@@ -6,13 +6,9 @@ try {
 
     $order = new \Shipay\Orders($api);
 
-    $data = [
-        "order_ref" => "shipaypag-002",
-        "wallet" => "shipay-pagador",
-        "total" => 0.51
-    ];
+    $id = '84dd6e5f-7b0d-4f31-bf08-794b016e7131';
 
-    $order = $order->post($data);
+    $order = $order->delete($id);
     
     echo '<pre>';
     print_r($order);
