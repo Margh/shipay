@@ -12,13 +12,8 @@ class Api {
     
     private $curl;
     private $url = "https://api.shipay.com.br";
-    private $access_key;
-    private $secret_key;
-    private $wallet;
-    private $client_id;
-    private $token;
     private $timeout;
-    private $headers       = array();
+    private $headers = array();
     private $complementUrl = '';
 
     /**
@@ -29,20 +24,12 @@ class Api {
      * @param string $wallet
      * @param int    $timeout
     */
-    public function __construct($access_key, $secret_key, $wallet, $client_id = null, $token = '', $environment = 'production', $timeout = 120){
+    public function __construct($environment = 'production', $timeout = 120){
 
-        $this->curl = new \Curl\Curl();
+        $this->curl    = new \Curl\Curl();
+        $this->timeout = $timeout;
         
         if($environment == 'approval') $this->url = "https://api-staging.shipay.com.br";
-        
-        $this->access_key = $access_key;
-        $this->secret_key = $secret_key;
-        $this->wallet     = $wallet;
-        $this->client_id  = $client_id;
-        $this->token      = $token;
-        $this->timeout    = $timeout;
-
-        if(!empty($token)) $this->setAuthorization($token);
     }
 
     /**
@@ -105,28 +92,6 @@ class Api {
     }
 
     /**
-     * Set wallet
-     * 
-     * @param string $value
-    */
-    public function setWallet($value){
-
-        $this->wallet = $value;
-
-    }
-
-    /**
-     * Set cliente_id
-     * 
-     * @param string $value
-    */
-    public function setClientId($value){
-
-        $this->client_id = $value;
-
-    }
-
-    /**
      * Set timeout
      * 
      * @param string $value
@@ -143,10 +108,14 @@ class Api {
      * @param string $value
     */
     public function setAuthorization($token){
-
-        $this->removeHeader('Authorization');
         
         $this->addHeader('Authorization', 'Bearer '. $token);
+
+    }
+
+    public function removeAuthorization(){
+
+        $this->removeHeader('Authorization');
 
     }
 
@@ -170,6 +139,6 @@ class Api {
     */
     public function removeHeader($key){
         
-        if(!empty($key)) $this->curl->removeHeader($key);
+        $this->curl->removeHeader($key);
     }
 }

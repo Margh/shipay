@@ -4,10 +4,11 @@ try {
 
     $api = require_once('../api.php');
 
-    $r_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTg2MzkxOTAsIm5iZiI6MTU5ODYzOTE5MCwianRpIjoiZWMxNTBkZWMtNTA0Yi00NGRmLTk0M2MtMDQyYzQ3OTNkMmJjIiwiZXhwIjoxNjAxMjMxMTkwLCJpZGVudGl0eSI6eyJhdXRoX3R5cGUiOiJwYXNzd29yZCIsInVzZXJfaWQiOjkxLCJtYXN0ZXJfYWNjb3VudCI6ZmFsc2UsImN1c3RvbWVyX2lkIjo4Mywic3RvcmVfcG9zX2lkIjpudWxsLCJyb2xlX2lkIjoxLCJpbXBlcnNvbmF0ZSI6ZmFsc2V9LCJ0eXBlIjoicmVmcmVzaCIsInVzZXJfY2xhaW1zIjpbInB1YmxpYyJdfQ.hKeSZopFfYXzB51d_qAhMCIk1avxaVQPYM4PMP1fYgs';
+    //refresh_token do usuario ou pdv
+    $refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTg3MDk3NDgsIm5iZiI6MTU5ODcwOTc0OCwianRpIjoiOGFhNDQyMGYtMTc5MS00OWMzLTgzYTctOTVmOWEyZjM5MzIwIiwiZXhwIjoxNjAxMzAxNzQ4LCJpZGVudGl0eSI6eyJhdXRoX3R5cGUiOiJjbGllbnQiLCJjdXN0b21lcl9pZCI6ODMsInN0b3JlX3Bvc19pZCI6MTM2fSwidHlwZSI6InJlZnJlc2giLCJ1c2VyX2NsYWltcyI6WyJwdWJsaWMiXX0.mwosAE0iRoYeItaOiJ0yOSvgFkPDcPiDJXLBujTIIzA';
     
-    $api->setAuthorization($token);
-
+    $api->setAuthorization($refresh_token);
+    
     $refresh = new \Shipay\RefreshTokens($api);
 
     $refresh = $refresh->post();
