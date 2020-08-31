@@ -11,7 +11,7 @@ try {
 
     $order = new \Shipay\Orders($api);
 
-    $id = '84dd6e5f-7b0d-4f31-bf08-794b016e7131';
+    $id = '5cbc76d2-094c-4d07-922e-fd60dfd1b87d';
 
     $order = $order->get($id);
     
