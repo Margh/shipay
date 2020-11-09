@@ -20,7 +20,7 @@ class ComposerStaticInit6104b924d21f3c31c1ab84f22018aed0
     public static $prefixDirsPsr4 = array (
         'Shipay\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Shipay',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Curl\\' => 
         array (
@@ -29,14 +29,15 @@ class ComposerStaticInit6104b924d21f3c31c1ab84f22018aed0
     );
 
     public static $classMap = array (
-        'Shipay\\Api' => __DIR__ . '/../..' . '/src/Shipay/Api.php',
-        'Shipay\\AuthsPDVs' => __DIR__ . '/../..' . '/src/Shipay/AuthsPDVs.php',
-        'Shipay\\AuthsUsers' => __DIR__ . '/../..' . '/src/Shipay/AuthsUsers.php',
-        'Shipay\\Endpoint' => __DIR__ . '/../..' . '/src/Shipay/Endpoint.php',
-        'Shipay\\Exception' => __DIR__ . '/../..' . '/src/Shipay/Exception.php',
-        'Shipay\\Orders' => __DIR__ . '/../..' . '/src/Shipay/Orders.php',
-        'Shipay\\RefreshTokens' => __DIR__ . '/../..' . '/src/Shipay/RefreshTokens.php',
-        'Shipay\\Wallets' => __DIR__ . '/../..' . '/src/Shipay/Wallets.php',
+        'Shipay\\Api' => __DIR__ . '/../..' . '/src/Api.php',
+        'Shipay\\AuthsPDVs' => __DIR__ . '/../..' . '/src/AuthsPDVs.php',
+        'Shipay\\AuthsUsers' => __DIR__ . '/../..' . '/src/AuthsUsers.php',
+        'Shipay\\Endpoint' => __DIR__ . '/../..' . '/src/Endpoint.php',
+        'Shipay\\Exception' => __DIR__ . '/../..' . '/src/Exception.php',
+        'Shipay\\Orders' => __DIR__ . '/../..' . '/src/Orders.php',
+        'Shipay\\RefreshTokens' => __DIR__ . '/../..' . '/src/RefreshTokens.php',
+        'Shipay\\Wallets' => __DIR__ . '/../..' . '/src/Wallets.php',
+        'Shipay\\WalletsSupported' => __DIR__ . '/../..' . '/src/WalletsSupported.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

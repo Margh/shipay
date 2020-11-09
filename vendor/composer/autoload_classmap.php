@@ -6,12 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Shipay\\Api' => $baseDir . '/src/Shipay/Api.php',
-    'Shipay\\AuthsPDVs' => $baseDir . '/src/Shipay/AuthsPDVs.php',
-    'Shipay\\AuthsUsers' => $baseDir . '/src/Shipay/AuthsUsers.php',
-    'Shipay\\Endpoint' => $baseDir . '/src/Shipay/Endpoint.php',
-    'Shipay\\Exception' => $baseDir . '/src/Shipay/Exception.php',
-    'Shipay\\Orders' => $baseDir . '/src/Shipay/Orders.php',
-    'Shipay\\RefreshTokens' => $baseDir . '/src/Shipay/RefreshTokens.php',
-    'Shipay\\Wallets' => $baseDir . '/src/Shipay/Wallets.php',
+    'Shipay\\Api' => $baseDir . '/src/Api.php',
+    'Shipay\\AuthsPDVs' => $baseDir . '/src/AuthsPDVs.php',
+    'Shipay\\AuthsUsers' => $baseDir . '/src/AuthsUsers.php',
+    'Shipay\\Endpoint' => $baseDir . '/src/Endpoint.php',
+    'Shipay\\Exception' => $baseDir . '/src/Exception.php',
+    'Shipay\\Orders' => $baseDir . '/src/Orders.php',
+    'Shipay\\RefreshTokens' => $baseDir . '/src/RefreshTokens.php',
+    'Shipay\\Wallets' => $baseDir . '/src/Wallets.php',
+    'Shipay\\WalletsSupported' => $baseDir . '/src/WalletsSupported.php',
 );

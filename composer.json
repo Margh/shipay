@@ -15,11 +15,11 @@
     "autoload": {
         
         "psr-4": {
-            "Shipay\\": "src/Shipay"
+            "Shipay\\": "src"
         },
 
         "classmap" : [
-            "src/Shipay"
+            "src"
         ]
     }
 }
