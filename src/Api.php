@@ -74,8 +74,25 @@ class Api {
         }
         catch(\Exception $e){
             
-            throw $e;
-        }        
+            $codigo  = $e->getCode();
+
+            switch ($codigo) {
+                case '401':
+                    throw new \Exception("Usuário não identificado.");
+                    break;
+                case '403':
+                    throw new \Exception("Permissão negada.");
+                    break;
+                case '404':
+                    throw new \Exception("Ordem não encontrada.");
+                    break;
+                default:
+                    throw $e;
+                    break;
+            }
+
+        }
+
     }
 
     /**
